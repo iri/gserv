@@ -1,5 +1,5 @@
 # gserv
-A lean and simple UDP graphics server (~22kb compiled), written in C
+A lean and simple UDP graphics server (~22kb compiled on OSX), written in C
 
 ## Requirements
 
@@ -14,10 +14,14 @@ make
 ## Start
 
 Start a graphics server
+```
     ./gserv
+```    
 
 Send some test commands to the server started on localhost
+```
     ./gstest
-    
-To run ./gstest on from another machine, adjust server address UDP_ADDR in gstest.c
+```    
+
+To run `./gstest` on from another machine, adjust server address `UDP_ADDR` in `gstest.c`
 
