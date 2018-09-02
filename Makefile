@@ -5,8 +5,8 @@ PROJECT ?= $(notdir $(BASEDIR))
 PROJECT := $(strip $(PROJECT))
 
 
-LDLIBS += -lm -lpthread
-CFLAGS += -fPIC
+LDLIBS += -lm -lpthread -L/usr/local/lib -lSDL2 -lSDL2_image -lSDL2_mixer -lSDL2_ttf
+CFLAGS += -fPIC -I/usr/local/include/SDL2 -D_THREAD_SAFE
 
 UNAME := $(shell uname)
 
