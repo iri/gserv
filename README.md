@@ -7,7 +7,9 @@ A lean and simple UDP graphics server (~22kb compiled on OSX), written in C
 
 ## Build
 
-make
+```
+    make
+```    
 
 (server currently is tested on OSX only, client works on OSX and Linux)
 
@@ -18,7 +20,7 @@ Start a graphics server
     ./gserv
 ```    
 
-Send some test commands to the server started on localhost
+Send some test commands to the server started on `localhost`
 ```
     ./gstest
 ```    
