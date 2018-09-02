@@ -1,2 +1,2 @@
 # gserv
-A lean and simple UDP graphics server written in C/SDL2
+A lean and simple UDP graphics server, written in C/SDL2
