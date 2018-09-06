@@ -5,19 +5,22 @@ PROJECT ?= $(notdir $(BASEDIR))
 PROJECT := $(strip $(PROJECT))
 
 
-LDLIBS += -lm -lpthread -L/usr/local/lib -lSDL2 -lSDL2_image -lSDL2_mixer -lSDL2_ttf
-CFLAGS += -fPIC -I/usr/local/include/SDL2 -D_THREAD_SAFE
+UNAME_SYS := $(shell uname -s)
+ifeq ($(UNAME_SYS), Darwin)
+	CFLAGS += -fPIC -I/usr/local/include/SDL2 -D_THREAD_SAFE
+else ifeq ($(UNAME_SYS), Linux)
+	CFLAGS += -fPIC -I/usr/include/SDL2 -D_THREAD_SAFE
+endif
 
-UNAME := $(shell uname)
-
+LDLIBS += -lm -lpthread  -lSDL2
 
 all: gserv gstest
 
 gserv: gserv.c time.c logger.c udplib.c udp.c
-	gcc `simple2d --libs` -lpthread -o gserv gserv.c time.c logger.c udplib.c udp.c $(CFLAGS) $(LDLIBS)
+	gcc -lpthread -o gserv gserv.c time.c logger.c udplib.c udp.c $(CFLAGS) $(LDLIBS)
 
 gstest: gstest.c gs_api.c
-	gcc `simple2d --libs` -o gstest gstest.c gs_api.c $(CFLAGS) $(LDLIBS)
+	gcc -o gstest gstest.c gs_api.c $(CFLAGS) $(LDLIBS)
 
 clean:
 	rm -f *.o ./gserv ./gstest
