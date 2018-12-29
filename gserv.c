@@ -25,6 +25,7 @@ SDL_Window* gWindow = NULL;
 //The window renderer
 SDL_Renderer* gRenderer = NULL;
 
+SDL_Surface *screen = NULL;
 
 extern item_t obj[MAXOBJ];
 extern int objcnt;
@@ -83,6 +84,8 @@ int init()
 			}
 			else
 			{
+				screen = SDL_GetWindowSurface(gWindow);
+
 				//Initialize renderer color
 				SDL_SetRenderDrawColor( gRenderer, 0x00, 0x00, 0x00, 0xFF );
 			}

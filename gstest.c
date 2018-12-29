@@ -24,23 +24,10 @@ int main(int argc, char *argv[]) {
             gs_point(b, 300, 200, &len);                    //   Draw point
             gs_point(b, 301, 200, &len);                    //   Draw point
          gs_color(b, 0x50, 0xA0, 0xD0, 0xFF, &len);         // Set drawing color (green)
-         gs_point_set(b, 16, &len);                          // Init point set (4 points)
-            gs_point(b, 200, 220, &len);                    //   Draw point
-            gs_point(b, 201, 220, &len);                    //   Draw point
-            gs_point(b, 202, 220, &len);                    //   Draw point
-            gs_point(b, 203, 220, &len);                    //   Draw point
-            gs_point(b, 200, 221, &len);                    //   Draw point
-            gs_point(b, 201, 221, &len);                    //   Draw point
-            gs_point(b, 202, 221, &len);                    //   Draw point
-            gs_point(b, 203, 221, &len);                    //   Draw point
-            gs_point(b, 200, 222, &len);                    //   Draw point
-            gs_point(b, 201, 222, &len);                    //   Draw point
-            gs_point(b, 202, 222, &len);                    //   Draw point
-            gs_point(b, 203, 222, &len);                    //   Draw point
-            gs_point(b, 200, 223, &len);                    //   Draw point
-            gs_point(b, 201, 223, &len);                    //   Draw point
-            gs_point(b, 202, 223, &len);                    //   Draw point
-            gs_point(b, 203, 223, &len);                    //   Draw point
+         gs_point_set(b, 3, &len);                          // Init point set (4 points)
+            gs_point(b, 0, 0, &len);                    //   Draw point
+            gs_point(b, 1, 0, &len);                    //   Draw point
+            gs_point(b, 2, 0, &len);                    //   Draw point
          gs_color(b, 0xFF, 0xFF, 0xFF, 0xFF, &len);         // Set drawing color (white)
          gs_line_set(b, 2, &len);                           // Init line set (2 lines)
             gs_line(b, 200, 240, 400, 400, &len);           //   Draw line
