@@ -51,7 +51,7 @@
 
 extern Logger *LOG;
 
-int started;
+int started = 0;
 
 
 int send_udp_socket;

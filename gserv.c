@@ -17,7 +17,7 @@
 #define SCREEN_HEIGHT		600
 
 Logger *LOG;
-int started;
+extern int started;
 
 //The window we'll be rendering to
 SDL_Window* gWindow = NULL;
@@ -119,7 +119,8 @@ int main( int argc, char* args[] )
       return 1;
    } else {
       while (started!=1) {
-         usleep(10000);
+         printf("wait...\n");
+         usleep(100);
       }
       log_info(LOG, "udp_listener_loop thread started on port %lu",UDP_PORT);
    }
